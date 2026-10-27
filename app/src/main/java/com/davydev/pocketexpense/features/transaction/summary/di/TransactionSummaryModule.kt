@@ -1,0 +1,19 @@
+package com.davydev.pocketexpense.features.transaction.summary.di
+
+import com.davydev.pocketexpense.features.transaction.summary.data.ITransactionSummaryEnvironment
+import com.davydev.pocketexpense.features.transaction.summary.data.TransactionSummaryEnvironment
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
+
+@Module
+@InstallIn(ViewModelComponent::class)
+abstract class TransactionSummaryModule {
+
+    @Binds
+    abstract fun provideEnvironment(
+        environment: TransactionSummaryEnvironment
+    ): ITransactionSummaryEnvironment
+
+}
